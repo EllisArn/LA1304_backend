@@ -23,6 +23,10 @@ mongoose.connect(`${process.env.DB_URL}`).then(() => {
   console.log('Connected to database')
 })
 
+app.get('/', (req, res) => {
+  res.send("Hello World")
+}
+
 app.get('/africa', (req, res) => {
   Welt.find(
     { Kontinent: 'Afrika' },
