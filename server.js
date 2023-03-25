@@ -16,13 +16,9 @@ app.use(cors())
 
 mongoose.set('strictQuery', false)
 
-mongoose
-  .connect(
-    `mongodb+srv://LA1304-server:DKyec3UHULGCMFSG@freecluster.vquf0xo.mongodb.net/LA1304?retryWrites=true&w=majority`
-  )
-  .then(() => {
-    console.log('Connected to database')
-  })
+mongoose.connect(`${process.env.DB_URL}`).then(() => {
+  console.log('Connected to database')
+})
 
 app.get('/', (req, res) => {
   res.send('Hello World')
