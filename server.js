@@ -24,8 +24,8 @@ mongoose.connect(`${process.env.DB_URL}`).then(() => {
 })
 
 app.get('/', (req, res) => {
-  res.send("Hello World")
-}
+  res.send('Hello World')
+})
 
 app.get('/africa', (req, res) => {
   Welt.find(
